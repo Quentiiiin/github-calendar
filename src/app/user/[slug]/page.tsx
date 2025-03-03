@@ -22,7 +22,7 @@ export default async function Page({
     return (
         <div className='flex w-screen h-screen justify-center items-center overflow-hidden page-container'>
             <div className='overflow-hidden scale-150'>
-                <ActivityCalendar data={data} />
+                <ActivityCalendar data={data} colorScheme={'dark'} />
             </div>
         </div>
     );
