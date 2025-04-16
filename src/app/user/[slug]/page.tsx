@@ -1,20 +1,11 @@
 'use client'
 import { ActivityCalendar } from 'react-activity-calendar';
 import { useState, useEffect } from 'react';
+import React from 'react';
 
-export default function Page({
-    params,
-}: {
-    params: { slug: string }
-}) {
-    const [slug, setSlug] = useState<string | null>(null);
+export default function Page({params}: {params: {slug: string}}) {
+    const { slug } = params;
     const [data, setData] = useState<any[]>([]);
-
-    useEffect(() => {
-        params.then((resolvedParams) => {
-            setSlug(resolvedParams.slug);
-        });
-    }, [params]);
 
     useEffect(() => {
         let intervalId: NodeJS.Timeout | null = null;
